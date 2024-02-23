@@ -1,5 +1,4 @@
 var jwt = require('jsonwebtoken');
-require('dotenv').config();
 
 const createJWT = (payload, key) => {
     var token = jwt.sign(payload, key);

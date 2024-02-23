@@ -1,6 +1,5 @@
 const User = require('../models/User');
 const JWT = require('../middleware/auth.jwt');
-require('dotenv').config();
 
 function checkPassword(inputPassword, password) {
     return inputPassword === password;
@@ -15,8 +14,7 @@ function login(req, res) {
                     const dataForAccessToken = {
                         _id: user._id
                     };
-                    const accessTokenLife = process.env.ACCESS_TOKEN_LIFE;
-                    const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+                    const accessTokenSecret = 'vuvietduy';
 
                     accessToken = JWT.createJWT(dataForAccessToken, accessTokenSecret);
 
