@@ -3,11 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var db = require("./config/db")
+var db = require("./config/db");
 require('dotenv').config();
 
 // connect db
-db.connect()
+db.connect();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -63,7 +63,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT
+const port = process.env.PORT;
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

@@ -1,4 +1,4 @@
-const Blog = require('../models/Blog')
+const Blog = require('../models/Blog');
 
 function create(req, res) {
     try {
@@ -36,31 +36,31 @@ function getAllBlog(req, res) {
 function getBlogById(req, res) {
     const id = req.params.id;
     Blog.findById(id)
-    .then((blog) => {
-        return res.status(200).json({
-            success: true,
-            message: 'Successful',
-            blogs: blog,
+        .then((blog) => {
+            return res.status(200).json({
+                success: true,
+                message: 'Successful',
+                blogs: blog,
+            });
         })
-    })
-    .catch((err) => {
-        res.status(500).json({
-            success: false,
-            message: 'Server error. Please try again.',
-            error: err.message,
-        });
-    })
+        .catch((err) => {
+            res.status(500).json({
+                success: false,
+                message: 'Server error. Please try again.',
+                error: err.message,
+            });
+        })
 }
 
 function deleteBlog(req, res) {
     const id = req.params.id;
     Blog.findByIdAndDelete(id)
-    .then((response) => {
-        return res.status(200).json({
-            success: true,
-            message: response,
-        })
-    })
+        .then((response) => {
+            return res.status(200).json({
+                success: true,
+                message: response,
+            });
+        });
 }
 
 module.exports = {

@@ -8,4 +8,4 @@ const Blog = new Schema({
     updatedAt: { type: Date, default: Date.now },
 })
 
-module.exports = mongoose.model('Blog', Blog)
+module.exports = mongoose.model('Blog', Blog);

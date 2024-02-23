@@ -10,8 +10,8 @@ const createJWT = (payload, key) => {
 const verifyToken = (token, key) => {
     var decode = null
     try {
-        decode = jwt.verify(token, key)
-    } catch(err) {
+        decode = jwt.verify(token, key);
+    } catch (err) {
         console.log(err);
     }
     return decode;
@@ -20,4 +20,4 @@ const verifyToken = (token, key) => {
 module.exports = {
     createJWT,
     verifyToken,
-}
+};
