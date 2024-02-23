@@ -22,7 +22,7 @@ app.set('view engine', 'jade');
 
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_URL || "http://localhost:3000");
+  res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000");
   // Request methods you wish to allow
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   // Request headers you wish to allow
@@ -63,7 +63,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-const port = process.env.PORT;
+const port = 8080;
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);

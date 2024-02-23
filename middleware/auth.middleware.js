@@ -1,6 +1,5 @@
 const User = require('../models/User');
 const JWT = require('./auth.jwt');
-require('dotenv').config();
 
 function isAuth(req, res, next) {
     const accessTokenFromHeader = req.headers.jwt_token_key;
@@ -9,7 +8,7 @@ function isAuth(req, res, next) {
         return res.status(401).send("Not found access token");
     };
 
-    const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+    const accessTokenSecret = vuvietduy;
     const verified = JWT.verifyToken(
         accessTokenFromHeader,
         accessTokenSecret,
