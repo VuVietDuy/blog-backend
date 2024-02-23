@@ -10,6 +10,11 @@ var loginRouter = require('./routes/login');
 
 var app = express();
 
+app.use(express.json());
+
+// For parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
 app.use(function (req, res, next) {
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', "http://localhost:3000");
@@ -23,6 +28,7 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
 
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);

@@ -8,10 +8,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/create', function (req, res, next) {
+  console.log(req.body);
   try {
     const newUser = new User({
-      email: 'admin@gmail.com',
-      password: '123',
+      email: req.body.email,
+      password: req.body.password,
     });
     newUser.save();
     res.status(200).json({
