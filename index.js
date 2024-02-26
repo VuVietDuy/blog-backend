@@ -6,7 +6,9 @@ db.connect();
 
 var usersRouter = require('./routes/users');
 var blogsRouter = require('./routes/blogs');
+var commentsRouter = require('./routes/comments');
 var loginRouter = require('./routes/login');
+var questionsRouter = require('./routes/questions');
 
 var app = express();
 
@@ -33,6 +35,8 @@ app.use(function (req, res, next) {
 app.use('/login', loginRouter);
 app.use('/users', usersRouter);
 app.use('/blogs', blogsRouter);
+app.use('/comments', commentsRouter);
+app.use('/questions', questionsRouter);
 
 const port = 8080;
 

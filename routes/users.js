@@ -4,7 +4,14 @@ const User = require('../models/User');
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
+  User.find()
+  .then(user => {
+    res.status(200).json({
+      success: true,
+      message: "Successful",
+      data: user,
+    });
+  })
 });
 
 router.post('/create', function (req, res, next) {

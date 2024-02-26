@@ -8,7 +8,7 @@ function create(req, res) {
         return res.status(200).json({
             success: true,
             message: 'Successful',
-            blogs: newBlog,
+            data: newBlog,
         });
     } catch (err) {
         res.status(400).json({ message: err.message });
@@ -21,7 +21,7 @@ function getAllBlog(req, res) {
             return res.status(200).json({
                 success: true,
                 message: 'Successful',
-                blogs: allBlog,
+                data: allBlog,
             });
         })
         .catch((err) => {
@@ -40,7 +40,7 @@ function getBlogById(req, res) {
             return res.status(200).json({
                 success: true,
                 message: 'Successful',
-                blogs: blog,
+                data: blog,
             });
         })
         .catch((err) => {

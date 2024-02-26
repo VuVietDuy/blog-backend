@@ -8,7 +8,7 @@ function isAuth(req, res, next) {
         return res.status(401).send("Not found access token");
     };
 
-    const accessTokenSecret = vuvietduy;
+    const accessTokenSecret = 'vuvietduy';
     const verified = JWT.verifyToken(
         accessTokenFromHeader,
         accessTokenSecret,
