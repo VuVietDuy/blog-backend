@@ -2,7 +2,7 @@ const User = require('../models/User');
 const JWT = require('./auth.jwt');
 
 function isAuth(req, res, next) {
-    const accessTokenFromHeader = req.headers.jwt_token_key;
+    const accessTokenFromHeader = req.headers.Authorization;
     console.log("Access token >> ", accessTokenFromHeader);
     if (!accessTokenFromHeader) {
         return res.status(401).send("Not found access token");
